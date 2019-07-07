@@ -1,0 +1,26 @@
+﻿<h1>Listado de Figuras Geométricas</h1>
+
+<%= link_to 'Crear Figura', '/picture/new' %>
+<table>
+	<tr>
+		<% @pictures.each do |pic| %>
+		<thead>
+			<th>Nombre</th>
+			<th>Tipo</th>
+			<th>Sides</th>
+			<th>Descripcion</th>
+			<th>Color</th>
+
+		</thead>
+	</tr>
+	<tr>
+		<td><%= pic.name %></td>
+		<td><%= pic.kind_selection %></td>
+		<td><%= pic.sides %></td>
+		<td><%= pic.description %></td>
+		<td><%= pic.color_selection %></td>
+
+	</tr>
+	<% end %>
+</table>
+<%= link_to 'Tipos', '/figures' %>

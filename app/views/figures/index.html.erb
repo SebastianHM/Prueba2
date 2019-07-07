@@ -1,0 +1,21 @@
+<h1>Listado de Tipos</h1>
+<%= link_to 'Crear Tipo', '/figure/new' %>
+<table>
+	<tr>
+		<% @figures.each do |fig| %>
+		<thead>
+			<th>Nombre</th>
+			<th>Descripcion</th>
+		</thead>
+	</tr>
+	<tr>
+		<td><%= fig.name %></td>
+		<td><%= fig.description %></td>
+		<td>
+			<%= link_to 'Eliminar', fig, method: :delete, data:{confirm: "Eliminar?"}  %>
+			<%= link_to 'Editar', editfigure_path(fig) %>
+		</td>
+	</tr>
+	<% end %>
+</table>
+<%= link_to 'Figuras Geometricas', '/pictures' %>

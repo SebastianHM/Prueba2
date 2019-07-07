@@ -1,0 +1,35 @@
+﻿<h1>Crear</h1>
+
+<%= form_for @picture do |p| %>
+
+<div>
+	<%= p.label :nombre %>
+	<%= p.text_area :name %>
+</div>
+<div>
+	<%= p.label :tipo %>
+	
+	
+	
+	<%= p.select(:kind_selection,options_for_select(@opts)) %>
+	
+</div>
+<div>
+	<%= p.label :lados %>
+	<%= p.number_field :sides %>
+</div>
+<div>
+	<%= p.label :descripcion %>
+	<%= p.text_area :description %>
+</div>
+<div>
+	<%= p.label :color %>
+	<div>
+		<%= p.select(:color_selection,options_for_select([['Amarillo','Amarillo'],['Azul','Azul'],['Rojo','Rojo'],['Verde','Verde']])) %>
+	</div>
+</div>
+<div>
+	<%= p.submit %>
+</div>
+
+<% end %>
